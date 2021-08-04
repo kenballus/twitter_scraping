@@ -7,7 +7,7 @@ def main():
         print("USAGE: python3 scrape.py <output_filename>")
         sys.exit(1)
 
-    filename = "output.csv"
+    filename = sys.argv[1]
 
     # A matching tweet must contain at least one of these words
     # keywords = ["women", "woman", "girl", "girls", "female", "females", "feminine", "femininity"]
