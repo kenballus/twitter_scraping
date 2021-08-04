@@ -10,16 +10,19 @@ def main():
     filename = sys.argv[1]
 
     # A matching tweet must contain at least one of these words
-    # keywords = ["women", "woman", "girl", "girls", "female", "females", "feminine", "femininity"]
-    keywords = []
+    keywords = ["women", "woman", "girl", "girls", "female", "females", "feminine", "femininity"]
 
     # A matching tweet must be from one of these users
-    from_accounts = ["@narendramodi", "@PMOIndia", "@ChouhanShivraj", "@amitshah", "@rajnathsingh",
-                     "@piyushgoyal", "@sambitswaraj", "@JPnadda", "@GautamGambhir", "@Swamy39",
-                     "@BJP4India", "@myogiadityanath"]
+    # from_accounts = ["@narendramodi", "@PMOIndia", "@ChouhanShivraj", "@amitshah", "@rajnathsingh",
+    #                  "@piyushgoyal", "@sambitswaraj", "@JPnadda", "@GautamGambhir", "@Swamy39",
+    #                  "@BJP4India", "@myogiadityanath"]
+    from_accounts = []
 
     # A matching tweet must be directed at at least one of these users
     to_accounts = []
+
+    # A matching tweet must mention at least one of these users
+    mention_accounts = ["@barackobama", "@narendramodi"]
 
     # A matching tweet must contain at least one of these hashtags (you don't need to write the # symbol)
     hashtags = ["Tokyo2020", "Olympics"]
@@ -27,8 +30,6 @@ def main():
     # A matching tweet must be from between these dates (YYYY-MM-DD)
     start_date = "2021-08-04"
     max_date = "2021-08-05"
-
-    # Name for output file. Remember to change this each time you run the script.
 
     ############################ You probably won't need to change anything below this line.
 
@@ -52,6 +53,8 @@ def main():
         to_accounts = "%20OR%20to%3A".join(to_accounts)
     if hashtags:
         hashtags = "%20OR%20%23".join(hashtags)
+    if mention_accounts:
+        mention_accounts = "%20OR%20".join(mention_accounts)
 
     # This grabs the data from Twitter, makes a folder called "outputs," and saves a csv of all the data into that folder
     data = scrap(start_date=start_date,
@@ -62,7 +65,8 @@ def main():
                  hashtag=hashtags or None,
                  interval=interval,
                  display_type=display_type,
-                 filename=filename)
+                 filename=filename,
+                 mention_account=mention_accounts)
 
 if __name__ == "__main__":
     main()
