@@ -66,7 +66,7 @@ def main():
                  interval=interval,
                  display_type=display_type,
                  filename=filename,
-                 mention_account=mention_accounts)
+                 mention_account=mention_accounts or None)
 
 if __name__ == "__main__":
     main()
