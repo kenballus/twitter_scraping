@@ -1,3 +1,5 @@
+I made this for my sister's friend because the other Twitter scrapers weren't working. It gets around some limitations in Scweep. I bet there's something better out there, but this worked.
+
 ##Instructions:
 
 Open up Command Prompt and run these commands:
