@@ -1,6 +1,6 @@
 I made this for my sister's friend because the other Twitter scrapers weren't working. It gets around some limitations in Scweep. I bet there's something better out there, but this worked.
 
-##Instructions:
+Instructions:
 
 Open up Command Prompt and run these commands:
     - `git clone --recurse-submodules https://github.com/kenballus/twitter_scraping`
